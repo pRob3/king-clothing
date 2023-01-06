@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/cart.context';
 
-import Button from '../button/button.component';
+import Button, { BUTTON_TYPES_CLASSES } from '../button/button.component';
 import { CartItem } from '../cart-item/cart-item.component';
 
 import styles from './cart-dropdown.module.css';
@@ -26,7 +26,10 @@ const CartDropdown = () => {
           <span className={styles.emptyMessage}>Your cart is empty</span>
         )}
       </div>
-      <Button onClick={goToCheckoutHandler} buttonType='inverted'>
+      <Button
+        onClick={goToCheckoutHandler}
+        buttonType={BUTTON_TYPES_CLASSES.inverted}
+      >
         Go to Checkout
       </Button>
     </div>

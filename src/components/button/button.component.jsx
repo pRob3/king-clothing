@@ -1,6 +1,6 @@
 import styles from './button.module.css';
 
-const BUTTON_TYPES_CLASSES = {
+export const BUTTON_TYPES_CLASSES = {
   google: styles.googleSignIn,
   inverted: styles.inverted,
   default: '',
@@ -9,7 +9,7 @@ const BUTTON_TYPES_CLASSES = {
 const Button = ({ children, buttonType, ...otherProps }) => {
   return (
     <button
-      className={`${styles.buttonContainer} ${BUTTON_TYPES_CLASSES[buttonType]}`}
+      className={`${styles.buttonContainer} ${buttonType}`}
       {...otherProps}
     >
       {children}
