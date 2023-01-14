@@ -9,7 +9,6 @@ import styles from './category.module.css';
 
 const Category = () => {
   const { category } = useParams();
-  console.log('render/re-rendering category component');
   const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
