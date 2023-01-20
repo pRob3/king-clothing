@@ -102,7 +102,7 @@ export const createUserDocumentFromAuth = async (
   }
 
   // user exists in db
-  return userDocRef;
+  return userDocSnapshot;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
