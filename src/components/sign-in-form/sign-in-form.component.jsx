@@ -26,16 +26,17 @@ const SignInForm = () => {
       dispatch(emailSignInStart(email, password));
       resetForm();
     } catch (error) {
-      switch (error.code) {
-        case 'auth/user-not-found':
-          alert('User not found');
-          break;
-        case 'auth/wrong-password':
-          alert('Wrong password');
-          break;
-        default:
-          console.log(error);
-      }
+      console.log(error);
+      // switch (error.code) {
+      //   case 'auth/user-not-found':
+      //     alert('User not found');
+      //     break;
+      //   case 'auth/wrong-password':
+      //     alert('Wrong password');
+      //     break;
+      //   default:
+      //     console.log(error);
+      // }
     }
   };
 
