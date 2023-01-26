@@ -6,13 +6,14 @@ export const BUTTON_TYPES_CLASSES = {
   default: '',
 };
 
-const Button = ({ children, buttonType, ...otherProps }) => {
+const Button = ({ children, buttonType, isLoading, ...otherProps }) => {
   return (
     <button
-      className={`${styles.buttonContainer} ${buttonType}`}
+      disabled={isLoading}
+      className={`${styles.buttonContainer} ${buttonType} `}
       {...otherProps}
     >
-      {children}
+      {isLoading ? <span className={styles.buttonSpinner}></span> : children}
     </button>
   );
 };
