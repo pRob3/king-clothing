@@ -76,7 +76,10 @@ export type SignUpFailed = ActionWithPayload<
 
 export type SignOutStart = Action<USER_ACTION_TYPES.SIGN_OUT_START>;
 export type SignOutSuccess = Action<USER_ACTION_TYPES.SIGN_OUT_SUCCESS>;
-export type SignOutFailed = Action<USER_ACTION_TYPES.SIGN_OUT_FAILED>;
+export type SignOutFailed = ActionWithPayload<
+  USER_ACTION_TYPES.SIGN_OUT_FAILED,
+  Error
+>;
 
 export const emailSignInStart = withMatcher((email: string, password: string) =>
   createAction(USER_ACTION_TYPES.EMAIL_SIGN_IN_START, { email, password })
